@@ -15,7 +15,7 @@
                                 <h1 class="sm:text-2xl text-md font-medium">登録した参考書</h1>
                             </div>
                             <div class="mb-4 ml-4">
-                                <a href="{{ route('books.create') }}" class="text-blue-500">本を登録</a>
+                                <button type="button" onclick="location.href='{{ route('books.create') }}'" class="text-blue-500">本を登録</a>
                             </div>
                             <div class="flex flex-wrap -m-4">
                                 @foreach ($books as $book)
@@ -38,12 +38,12 @@
                                                     総ページ数: {{ $book->page }}<br>
                                                     勉強開始日: {{ $book->start_date }}<br>
                                                 </p>
-                                                <a href="{{ route('books.show', $book->id) }}" class="mt-3 text-blue-500 inline-flex items-center">check
+                                                <button type="button" onclick="location.href='{{ route('books.show', $book->id) }}'" class="mt-3 text-blue-500 inline-flex items-center">check
                                                     <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                                         stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
                                                         <path d="M5 12h14M12 5l7 7-7 7"></path>
                                                     </svg>
-                                                </a>
+                                                </button>
                                             </div>
                                         </div>
                                     </div>

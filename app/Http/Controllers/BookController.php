@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Book;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\StoreBookRequest;
+use Illuminate\Support\Facades\Auth;
 
 class BookController extends Controller
 {
@@ -40,6 +41,7 @@ class BookController extends Controller
     public function store(StoreBookRequest $request)
     {
         Book::create([
+            'user_id' => Auth::id(),
             'title' => $request->title,
             'due_date' => $request->due_date,
             'start_date' => $request->start_date,
@@ -70,7 +72,9 @@ class BookController extends Controller
      */
     public function edit($id)
     {
-        //
+        $book = Book::findOrFail($id);
+        // dd($book);
+        return view('edit', ['book' => $book]);
     }
 
     /**
@@ -80,7 +84,7 @@ class BookController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StoreBookRequest $request, $id)
     {
         //
     }
