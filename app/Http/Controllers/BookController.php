@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Book;
+use Illuminate\Support\Facades\DB;
+use App\Http\Requests\StoreBookRequest;
 
 class BookController extends Controller
 {
@@ -13,7 +16,9 @@ class BookController extends Controller
      */
     public function index()
     {
-        return view('schedule');
+        $books = Book::all();
+        // dd($books);
+        return view('schedule', ['books' => $books]);
     }
 
     /**
@@ -32,9 +37,17 @@ class BookController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreBookRequest $request)
     {
-        //
+        Book::create([
+            'title' => $request->title,
+            'due_date' => $request->due_date,
+            'start_date' => $request->start_date,
+            'page' => $request->page,
+            'page_hour' => $request->page_hour,
+        ]);
+
+        return to_route('books.index');
     }
 
     /**
@@ -45,7 +58,8 @@ class BookController extends Controller
      */
     public function show($id)
     {
-        //
+        $book = Book::findOrFail($id);
+        return view('show', ['book' => $book]);
     }
 
     /**

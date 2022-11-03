@@ -12,6 +12,8 @@ class Book extends Model
     protected $fillable = [
         'title',
         'due_date',
+        'start_date',
         'page',
+        'page_hour',
     ];
 }
