@@ -16,7 +16,7 @@
                             </div>
                             <form action="{{ route('books.store') }}" method="POST">
                                 @csrf
-                                <div class="lg:w-1/2 md:w-2/3 mx-auto">
+                                <div class="lg:w-1/3 md:w-2/3 mx-auto">
                                     @if ($errors->any())
                                     <div class="text-red-500 mb-6">
                                         <ul>
@@ -34,34 +34,31 @@
                                                     class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
                                             </div>
                                         </div>
-                                        <div class="w-full">
-                                            <div class="p-2 w-1/3">
-                                                <div class="relative">
-                                                    <label for="due_date" class="leading-7 text-sm text-gray-600">完了期限</label>
-                                                    <input type="date" id="due_date" name="due_date" value="{{ old('due_date') }}"
-                                                        class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-                                                </div>
+                                        <div class="p-2 w-1/2">
+                                            <div class="relative">
+                                                <label for="due_date" class="leading-7 text-sm text-gray-600">完了期限</label>
+                                                <input type="date" id="due_date" name="due_date" value="{{ old('due_date') }}"
+                                                    class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
                                             </div>
                                         </div>
-                                        <div class="p-2 w-1/3">
+                                        <div class="p-2 w-1/2">
                                             <div class="relative">
                                                 <label for="start_date" class="leading-7 text-sm text-gray-600">開始日</label>
                                                 <input type="date" id="start_date" name="start_date" value="{{ old('start_date') }}"
                                                     class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
                                             </div>
                                         </div>
-                                        <div class="p-2 w-1/3">
+                                        <div class="p-2 w-1/2">
                                             <div class="relative">
                                                 <label for="page" class="leading-7 text-sm text-gray-600">総ページ数</label>
                                                 <input type="number" id="page" name="page" value="{{ old('page') }}"
                                                     class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
                                             </div>
                                         </div>
-
-                                        <div class="p-2 w-1/3">
+                                        <div class="p-2 w-1/2">
                                             <div class="relative">
-                                                <label for="page_hour" class="leading-7 text-sm text-gray-600">1時間で読めるページ数</label>
-                                                <input type="number" id="page_hour" name="page_hour" value="{{ old('page_hour') }}"
+                                                <label for="page_per_day" class="leading-7 text-sm text-gray-600">1日に読むページ数</label>
+                                                <input type="number" id="page_per_day" name="page_per_day" value="{{ old('page_per_day') }}"
                                                     class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
                                             </div>
                                         </div>

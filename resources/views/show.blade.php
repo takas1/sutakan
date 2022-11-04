@@ -26,9 +26,7 @@
                                             <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">
                                                 総ページ</th>
                                             <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">
-                                                既読ページ</th>
-                                            <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">
-                                                1時間で読めるページ</th>
+                                                １日に読むページ数</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -36,8 +34,7 @@
                                             <td class="px-4 py-3">{{ $book->start_date }}</td>
                                             <td class="px-4 py-3">{{ $book->due_date }}</td>
                                             <td class="px-4 py-3">{{ $book->page }}</td>
-                                            <td class="px-4 py-3">{{ $book->page }}</td>
-                                            <td class="px-4 py-3">{{ $book->page_hour }}</td>
+                                            <td class="px-4 py-3">{{ $book->page_per_day }}</td>
                                         </tr>
                                     </tbody>
                                 </table>

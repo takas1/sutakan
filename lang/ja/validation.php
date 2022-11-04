@@ -26,7 +26,7 @@ return [
     'between'              => [
         'array'   => ':attributeの項目は、:min個から:max個にしてください。',
         'file'    => ':attributeには、:min KBから:max KBまでのサイズのファイルを指定してください。',
-        'numeric' => ':attributeには、:minから、:maxまでの数字を指定してください。',
+        'numeric' => ':attributeには、:min～:maxまでの数字を指定してください。',
         'string'  => ':attributeは、:min文字から:max文字にしてください。',
     ],
     'boolean'              => ':attributeには、\'true\'か\'false\'を指定してください。',
@@ -133,4 +133,11 @@ return [
             'rule-name' => 'custom-message',
         ],
     ],
+    'attributes'           => [
+        'title'  => 'タイトル',
+        'due_date'  => '完了期限',
+        'start_date'  => '開始日',
+        'page'  => '総ページ数',
+        'page_hour'  => '１時間で読めるページ数',
+    ]
 ];

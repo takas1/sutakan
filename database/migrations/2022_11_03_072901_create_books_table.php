@@ -22,9 +22,7 @@ return new class extends Migration
             $table->date('due_date');
             $table->date('start_date');
             $table->integer('page');
-            $table->integer('page_current')
-                  ->nullable();
-            $table->integer('page_hour');
+            $table->integer('page_per_day');
             $table->timestamps();
         });
     }

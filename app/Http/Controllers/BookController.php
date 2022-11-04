@@ -86,7 +86,16 @@ class BookController extends Controller
      */
     public function update(StoreBookRequest $request, $id)
     {
-        //
+        $book = Book::findOrFail($id);
+
+        $book->title = $request->title;
+        $book->due_date = $request->due_date;
+        $book->start_date = $request->start_date;
+        $book->page  = $request->page;
+        $book->page_hour = $request->page_hour;
+        $book->save();
+
+        return to_route('books.index');
     }
 
     /**
@@ -97,6 +106,9 @@ class BookController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $book = Book::findOrFail($id);
+        $book->delete();
+
+        return to_route('books.index');
     }
 }
