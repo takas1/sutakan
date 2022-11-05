@@ -28,7 +28,7 @@ class StoreBookRequest extends FormRequest
             'due_date' => ['required', 'date'],
             'start_date' => ['nullable', 'before_or_equal:due_date'],
             'page' => ['required', 'numeric', 'between:1,2000'],
-            'page_hour' => ['nullable', 'numeric', 'between:1,999'],
+            'page_per_day' => ['nullable', 'numeric', 'between:1,500'],
         ];
     }
 }

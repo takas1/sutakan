@@ -42,7 +42,7 @@
                                     <button type="button" onclick="location.href='{{ route('books.edit', $book->id) }}'"
                                         class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">編集</button>
                                 </div>
-                                <p class="mt-6">今のペースだと今日を入れて読み終わるまでにあと5日、読み終わる日はいついつ、終わらない場合はー何日。終わらせるために必要なページ数</p>
+                                {{-- <p class="mt-6">今のペースだと今日を入れて読み終わるまでにあと5日、読み終わる日はいついつ、終わらない場合はー何日。終わらせるために必要なページ数</p> --}}
                             </div>
                         </div>
                     </section>

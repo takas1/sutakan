@@ -17,7 +17,14 @@ class BookController extends Controller
      */
     public function index()
     {
-        $books = Book::all();
+        // $books = DB::table('books')->where('user_id', Auth::id())
+        //                            ->select('id', 'title', 'due_date', 'page', 'start_date')
+        //                            ->get();
+
+        $books = Book::where('user_id', Auth::id())
+                     ->select('id', 'title', 'due_date', 'page', 'start_date')
+                     ->get();
+
         // dd($books);
         return view('schedule', ['books' => $books]);
     }
@@ -46,7 +53,7 @@ class BookController extends Controller
             'due_date' => $request->due_date,
             'start_date' => $request->start_date,
             'page' => $request->page,
-            'page_hour' => $request->page_hour,
+            'page_per_day' => $request->page_per_day,
         ]);
 
         return to_route('books.index');
@@ -92,7 +99,7 @@ class BookController extends Controller
         $book->due_date = $request->due_date;
         $book->start_date = $request->start_date;
         $book->page  = $request->page;
-        $book->page_hour = $request->page_hour;
+        $book->page_per_day = $request->page_per_day;
         $book->save();
 
         return to_route('books.index');

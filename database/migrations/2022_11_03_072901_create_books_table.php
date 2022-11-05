@@ -24,6 +24,7 @@ return new class extends Migration
             $table->integer('page');
             $table->integer('page_per_day');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

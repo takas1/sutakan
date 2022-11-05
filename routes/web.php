@@ -14,9 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::resource('/books', BookController::class)->middleware(['auth', 'verified']);
 
@@ -25,7 +25,7 @@ Route::resource('/books', BookController::class)->middleware(['auth', 'verified'
 //     return view('schedule');
 // })->middleware(['auth', 'verified'])->name('test');
 
-Route::get('/dashboard', function () {
+Route::get('/', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 

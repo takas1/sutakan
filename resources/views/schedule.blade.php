@@ -15,7 +15,7 @@
                                 <h1 class="sm:text-2xl text-md font-medium">登録した参考書</h1>
                             </div>
                             <div class="mb-4 ml-4">
-                                <button type="button" onclick="location.href='{{ route('books.create') }}'" class="text-blue-500">本を登録</a>
+                                <button type="button" onclick="location.href='{{ route('books.create') }}'" class="text-white bg-indigo-500 border-0 py-2 px-4 focus:outline-none hover:bg-indigo-600 rounded">本を登録</a>
                             </div>
                             <div class="flex flex-wrap -m-4">
                                 @foreach ($books as $book)

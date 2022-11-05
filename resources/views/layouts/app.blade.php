@@ -30,14 +30,14 @@
             <main>
                 {{ $slot }}
             </main>
-            <footer class="text-gray-600 body-font">
-                <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
-                    <div class="w-16">
+            <footer class="w-full border-t-2 border-gray-100 top-full sticky mx-auto px-4 sm:px-6 lg:px-8 text-gray-600 body-font">
+                <div class="max-w-7xl container px-5 py-2 mx-auto flex items-center sm:flex-row flex-col">
+                    <div class="w-12">
                         <a href="{{ route('dashboard') }}">
                             <x-application-logo class="block h-10 w-auto fill-current text-gray-600" />
                         </a>
                     </div>
-                    <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2022
+                    <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2022-
                         sutakan
                     </p>
                 </div>
