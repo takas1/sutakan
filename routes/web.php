@@ -20,6 +20,9 @@ Route::get('/', function () {
 
 // Route::get('/books/trash', [BookController::class, 'trash'])->middleware(['auth', 'verified'])->name('books.trash');
 Route::resource('/books', BookController::class)->middleware(['auth', 'verified']);
+
+Route::post('/trash/restore/{trash}', [TrashController::class, 'restore'])
+    ->name('trash.restore');
 Route::resource('/trash', TrashController::class)->middleware(['auth', 'verified'])
     ->only(['index', 'destroy']);
 

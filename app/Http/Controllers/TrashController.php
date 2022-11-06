@@ -85,6 +85,17 @@ class TrashController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $book = Book::onlyTrashed($id);
+        $book->forceDelete();
+
+        return to_route('trash.index');
+    }
+
+    public function restore($id)
+    {
+        $book = Book::onlyTrashed()->findOrFail($id);
+        $book->restore();
+
+        return to_route('trash.index');
     }
 }

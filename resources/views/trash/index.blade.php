@@ -23,19 +23,29 @@
                                     <tbody>
                                         @foreach ($books as $book)
                                         <tr>
-                                            <td class="px-4 py-3 border-t-2 border-gray-200">{{ $book->title }}</td>
-                                            <td class="px-2 py-3 border-t-2 border-gray-200">
-                                                <button
-                                                    class="flex ml-auto text-white text-sm bg-indigo-500 border-0 py-2 px-4 focus:outline-none hover:bg-indigo-600 rounded">
-                                                    元に戻す
-                                                </button>
-                                            </td>
-                                            <td class="px-2 py-3 border-t-2 border-gray-200">
-                                                <button
-                                                    class="flex ml-auto text-white text-sm bg-red-500 border-0 py-2 px-4 focus:outline-none hover:bg-red-600 rounded">
-                                                    完全に削除
-                                                </button>
-                                            </td>
+                                            <form action="{{ route('trash.restore', $book->id) }}" method="POST">
+                                            @csrf
+                                                <td class="px-4 py-3 border-t-2 border-gray-200">{{ $book->title }}</td>
+                                                <td class="px-2 py-3 border-t-2 border-gray-200">
+                                                    <button
+                                                        type="submit"
+                                                        {{-- onclick="location.href='{{ route('trash.destroy', $book->id) }}'" --}}
+                                                        class="flex ml-auto text-white text-sm bg-indigo-500 border-0 py-2 px-4 focus:outline-none hover:bg-indigo-600 rounded">
+                                                        元に戻す
+                                                    </button>
+                                                </td>
+                                            </form>
+                                            <form action="{{ route('trash.destroy', $book->id) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                                <td class="px-2 py-3 border-t-2 border-gray-200">
+                                                    <button
+                                                        type="submit"
+                                                        class="flex ml-auto text-white text-sm bg-red-500 border-0 py-2 px-4 focus:outline-none hover:bg-red-600 rounded">
+                                                        完全に削除
+                                                    </button>
+                                                </td>
+                                            </form>
                                         </tr>
                                         @endforeach
                                     </tbody>
