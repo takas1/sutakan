@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Book;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\StoreBookRequest;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 
 class BookController extends Controller
@@ -26,7 +27,7 @@ class BookController extends Controller
                      ->get();
 
         // dd($books);
-        return view('schedule', ['books' => $books]);
+        return view('dashboard', ['books' => $books]);
     }
 
     /**
@@ -68,7 +69,12 @@ class BookController extends Controller
     public function show($id)
     {
         $book = Book::findOrFail($id);
-        return view('show', ['book' => $book]);
+
+        $days_required = intval(ceil($book->page / $book->page_per_day));
+        $before_add_date = new Carbon($book->start_date);
+        $completion_date = $before_add_date->addDay($days_required);
+
+        return view('show', ['book' => $book, 'completion_date' => $completion_date]);
     }
 
     /**
@@ -80,7 +86,7 @@ class BookController extends Controller
     public function edit($id)
     {
         $book = Book::findOrFail($id);
-        // dd($book);
+
         return view('edit', ['book' => $book]);
     }
 
@@ -118,4 +124,13 @@ class BookController extends Controller
 
         return to_route('books.index');
     }
+
+    // public function trash()
+    // {
+    //     $books = Book::onlyTrashed()
+    //         ->where('user_id', Auth::id())
+    //         ->get();
+
+    //     return view('trash', ['books' => $books]);
+    // }
 }

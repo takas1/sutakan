@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\TrashController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,19 +15,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-Route::resource('/books', BookController::class)->middleware(['auth', 'verified']);
-
-
-// Route::get('/test', function () {
-//     return view('schedule');
-// })->middleware(['auth', 'verified'])->name('test');
-
 Route::get('/', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+    return view('home');})->name('home');
+
+// Route::get('/books/trash', [BookController::class, 'trash'])->middleware(['auth', 'verified'])->name('books.trash');
+Route::resource('/books', BookController::class)->middleware(['auth', 'verified']);
+Route::resource('/trash', TrashController::class)->middleware(['auth', 'verified'])
+    ->only(['index', 'destroy']);
 
 require __DIR__.'/auth.php';

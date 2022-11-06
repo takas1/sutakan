@@ -25,10 +25,10 @@ class StoreBookRequest extends FormRequest
     {
         return [
             'title' => ['required', 'string', 'max:50'],
-            'due_date' => ['required', 'date'],
-            'start_date' => ['nullable', 'before_or_equal:due_date'],
+            'due_date' => ['required', 'date', 'after_or_equal:start_date', 'after_or_equal:today'],
+            'start_date' => ['required', 'before_or_equal:due_date'],
             'page' => ['required', 'numeric', 'between:1,2000'],
-            'page_per_day' => ['nullable', 'numeric', 'between:1,500'],
+            'page_per_day' => ['required', 'numeric', 'between:1,500'],
         ];
     }
 }

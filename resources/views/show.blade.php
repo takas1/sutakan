@@ -22,7 +22,7 @@
                                                 class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100 rounded-tl rounded-bl">
                                                 開始日</th>
                                             <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">
-                                                完了期限</th>
+                                                学習完了期限</th>
                                             <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">
                                                 総ページ</th>
                                             <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">
@@ -38,11 +38,15 @@
                                         </tr>
                                     </tbody>
                                 </table>
-                                <div class="p-4 w-full">
-                                    <button type="button" onclick="location.href='{{ route('books.edit', $book->id) }}'"
-                                        class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">編集</button>
+                                <div class="my-8 px-12 text-lg">
+                                    今のペースだと<span class="font-bold">{{ $completion_date->format('Y年m月d日') }}</span>に読み終わる
                                 </div>
-                                {{-- <p class="mt-6">今のペースだと今日を入れて読み終わるまでにあと5日、読み終わる日はいついつ、終わらない場合はー何日。終わらせるために必要なページ数</p> --}}
+                                <div class="p-4">
+                                    <button type="button" onclick="location.href='{{ route('books.edit', $book->id) }}'"
+                                        class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+                                        編集
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </section>

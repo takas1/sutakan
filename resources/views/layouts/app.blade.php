@@ -33,7 +33,7 @@
             <footer class="w-full border-t-2 border-gray-100 top-full sticky mx-auto px-4 sm:px-6 lg:px-8 text-gray-600 body-font">
                 <div class="max-w-7xl container px-5 py-2 mx-auto flex items-center sm:flex-row flex-col">
                     <div class="w-12">
-                        <a href="{{ route('dashboard') }}">
+                        <a href="{{ route('home') }}">
                             <x-application-logo class="block h-10 w-auto fill-current text-gray-600" />
                         </a>
                     </div>

@@ -132,12 +132,15 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+        'due_date' => [
+            'after_or_equal'      => '学習終了期限には、今日以降の日付を入力してください'
+        ]
     ],
     'attributes'           => [
         'title'  => 'タイトル',
         'due_date'  => '完了期限',
         'start_date'  => '開始日',
         'page'  => '総ページ数',
-        'page_hour'  => '１時間で読めるページ数',
+        'page_per_day'  => '1日に読むページ数',
     ]
 ];

@@ -39,7 +39,7 @@
                                             <div class="p-2 w-1/3">
                                                 <div class="relative">
                                                     <label for="due_date"
-                                                        class="leading-7 text-sm text-gray-600">完了期限</label>
+                                                        class="leading-7 text-sm text-gray-600">学習完了期限</label>
                                                     <input type="date" id="due_date" name="due_date" value="{{ old('due_date', $book->due_date) }}"
                                                         class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
                                                 </div>
