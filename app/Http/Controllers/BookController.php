@@ -70,8 +70,9 @@ class BookController extends Controller
     {
         $book = Book::findOrFail($id);
 
-        $days_required = intval(ceil($book->page / $book->page_per_day));
+        $days_required = intval(ceil($book->page / $book->page_per_day))-1;
         $before_add_date = new Carbon($book->start_date);
+        // dd($before_add_date);
         $completion_date = $before_add_date->addDay($days_required);
 
         return view('show', ['book' => $book, 'completion_date' => $completion_date]);

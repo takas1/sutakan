@@ -29,7 +29,6 @@
                                                 <td class="px-2 py-3 border-t-2 border-gray-200">
                                                     <button
                                                         type="submit"
-                                                        {{-- onclick="location.href='{{ route('trash.destroy', $book->id) }}'" --}}
                                                         class="flex ml-auto text-white text-sm bg-indigo-500 border-0 py-2 px-4 focus:outline-none hover:bg-indigo-600 rounded">
                                                         元に戻す
                                                     </button>
